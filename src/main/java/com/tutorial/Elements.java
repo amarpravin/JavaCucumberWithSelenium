@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class Elements extends DriverManager{
     public void searchText(String searchString){
-        driver.findElement(By.id("lst-ib")).sendKeys(searchString);
-        driver.findElement(By.id("_fZl")).click();
+        driver.findElement(By.xpath("//input[@aria-label='Search']")).sendKeys(searchString);
+        driver.findElement(By.name("btnK")).click();
     }
 
     public boolean isOnHomePage() {

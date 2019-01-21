@@ -91,7 +91,7 @@ Go to src\main\java\com\tutorial path and create below java files
 
     public void openBrowser(){
         //Download Webdriver from http://www.seleniumhq.org/download/ and provide unzipped exe path
-        File file = new File("Z:\\Tutorials\\WebDriver\\chromedriver.exe");
+        File file = new File("src/test/resources/seleniumdrivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsoluteFile().toString());
         driver=new ChromeDriver();
         driver.get("https://google.com");
@@ -110,8 +110,8 @@ Go to src\main\java\com\tutorial path and create below java files
   ```
     public class Elements extends DriverManager {
     public void searchText(String searchString){
-        driver.findElement(By.id("lst-ib")).sendKeys(searchString);
-        driver.findElement(By.id("_fZl")).click();        
+        driver.findElement(By.xpath("//input[@aria-label='Search']")).sendKeys(searchString);
+        driver.findElement(By.name("btnK")).click();
     }
 
     public boolean isOnHomePage() {
